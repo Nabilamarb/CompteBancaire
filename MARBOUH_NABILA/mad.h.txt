@@ -1,0 +1,14 @@
+#pragma once
+#include<iostream>
+ 
+ class MAD
+ {
+ private : 
+     double valeur;
+     string symbole;
+ public:
+     MAD(double valeur, string symbole);
+     void afficher() const;
+     ~MAD();
+ 
+ }

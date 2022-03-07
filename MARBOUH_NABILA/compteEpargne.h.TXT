@@ -1,0 +1,12 @@
+class CompteEpargne : public CompteBancair{
+
+private:
+
+double tauxInteret=0;
+
+public:
+
+CompteEpargne(double solde);
+void CalculerInteret();
+~CompteEparge();
+}

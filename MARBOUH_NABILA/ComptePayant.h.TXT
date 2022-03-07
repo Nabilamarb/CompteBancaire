@@ -1,0 +1,8 @@
+class ComptePayant : CompteBancaire{
+
+public:
+ComptePayant(double solde);
+void deposerArgent(double montant) override;
+bool retirerArgent(double montant) override;
+~ComptePayant();
+}

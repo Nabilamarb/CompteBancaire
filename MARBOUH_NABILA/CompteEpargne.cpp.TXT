@@ -1,0 +1,15 @@
+#include <iostream>
+#include "CompteBancaire.h"
+
+using namespace std;
+
+CompteEpargne::CompteEpargne(double solde):CompteBancaire(solde){}
+
+void CompteEpargne::CalculerInteret(){
+
+this->CompteBancaire->deposerArgent((solde * tauxInteret)/ 100);
+
+}
+CompteEparge::~CompteEparge(){
+std::cout << "destructeur de la classe compteEparge :" << std::endl;
+}

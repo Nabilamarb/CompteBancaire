@@ -1,0 +1,79 @@
+#include <iostream>
+#include "CompteBancaire.h"
+
+using namespace std;
+using namespace bank;
+
+CompteBancaire::CompteBancaire(Client prop, MAD solde){
+
+this-> cpt++;
+this-> numCompte = cpt;
+this-> proprietaire = prop;
+this-> solde = solde;
+}
+
+CompteBancaire::CompteBancaire(const CompteBancaire& c)const{
+
+this-> numCompte = c.numCompte;
+this-> proprietaire = c.prop;
+this-> solde = c.solde;
+}
+
+virtual bool CompteBancaire::retirerArgent(double montant){
+
+if(this-> solde.valeur >= montant){
+
+this-> solde.valeur = solde.valeur - montant;
+
+return true;
+}else{
+return false;
+}
+}
+
+virtual void CompteBancaire::deposerArgent(double montant){
+
+this-> solde.valeur = solde.valeur + montant;
+}
+
+virtual void CompteBancaire::consulterSolde() {
+
+cout <<"le numero compte est :"<<this-> numCompte <<endl;
+cout <<"le solde est :"<<this-> solde <<endl;
+
+}
+
+virtual bool CompteBancaire::transfererArgent(compte *c, double montant){
+if(this-> retirerArgent()== true){
+c-> deposerArgent(montant);
+
+return true;
+}else{
+return false;
+}
+}
+CompteBancaire::~CompteBancaire(){
+std::cout << "destructeur de la classe compteBancaire :" << std::endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

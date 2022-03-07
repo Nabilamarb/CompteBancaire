@@ -1,0 +1,18 @@
+#include <iostream>
+#include "CompteBancaire.h"
+#include "ComptePayant.h"
+
+override void ComptePayant::deposerArgent(double montant){
+
+this->CompteBancaire->deposerArgent(montant);
+this->CompteBancaire->retirerArgent(montant * 0.05);
+}
+
+override bool ComptePayant::retirerArgent(double montant){
+
+this->CompteBancaire->retirerArgent(montant);
+this->CompteBancaire->retirerArgent(montant * 0.05);
+}
+ComptePayant::~ComptePayant(){
+std::cout << "destructeur de la classe comptePayant :" << std::endl;
+}
